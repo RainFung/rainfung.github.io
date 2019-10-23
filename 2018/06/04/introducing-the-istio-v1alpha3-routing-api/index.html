@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    <meta property="og:site_name" content="Huabing Blog">
+    <meta property="og:site_name" content="Dive Into Data">
     <meta property="og:type" content="article">
 
     
-    <meta property="og:image" content="https://fengrain.github.io//img/home-bg-jeep.jpg">
-    <meta property="twitter:image" content="https://fengrain.github.io//img/home-bg-jeep.jpg" />
+    <meta property="og:image" content="https://rainfung.github.io//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://rainfung.github.io//img/home-bg-jeep.jpg" />
     
 
     
@@ -31,26 +31,26 @@
     
     
 
-    <meta name="keyword"  content="赵化冰, zhaohuabing, Zhaohuabing, , 赵化冰的网络日志, 赵化冰的博客, Zhaohuabing Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="keyword"  content="博客, 个人网站, 互联网, 数据挖掘, 机器学习 , 深度学习, 大数据, Spark, Flink, Python, Scala">
+    <link rel="shortcut icon" href="https://rainfung.github.io/img/favicon.ico">
 
-    <title>Istio v1aplha3 routing API介绍(译文）-赵化冰的博客 | Zhaohuabing Blog</title>
+    <title>Istio v1aplha3 routing API介绍(译文）-</title>
 
-    <link rel="canonical" href="/2018/06/04/introducing-the-istio-v1alpha3-routing-api/">
+    <link rel="canonical" href="https://rainfung.github.io/2018/06/04/introducing-the-istio-v1alpha3-routing-api/">
 
-    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+    <link rel="stylesheet" href="https://rainfung.github.io/css/iDisqus.min.css"/>
 	
     
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://rainfung.github.io/css/bootstrap.min.css">
 
     
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
+    <link rel="stylesheet" href="https://rainfung.github.io/css/hux-blog.min.css">
 
     
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="https://rainfung.github.io/css/syntax.css">
     
     
-    <link rel="stylesheet" href="/css/zanshang.css">
+    <link rel="stylesheet" href="https://rainfung.github.io/css/zanshang.css">
     
     
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -60,13 +60,13 @@
 
     
     
-    <script src="/js/jquery.min.js"></script>
+    <script src="https://rainfung.github.io/js/jquery.min.js"></script>
     
     
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://rainfung.github.io/js/bootstrap.min.js"></script>
     
     
-    <script src="/js/hux-blog.min.js"></script>
+    <script src="https://rainfung.github.io/js/hux-blog.min.js"></script>
 
     
     
@@ -92,7 +92,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Huabing Blog</a>
+            <a class="navbar-brand" href="https://rainfung.github.io/">Dive Into Data</a>
         </div>
 
         
@@ -101,35 +101,31 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="https://rainfung.github.io/">Home</a>
                     </li>
                     
                     <li>
-                        <a href="/categories/life">life</a>
+                        <a href="https://rainfung.github.io/categories/life">life</a>
                     </li>
                     
                     <li>
-                        <a href="/categories/note">note</a>
+                        <a href="https://rainfung.github.io/categories/tech">tech</a>
                     </li>
                     
                     <li>
-                        <a href="/categories/tech">tech</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/categories/tips">tips</a>
+                        <a href="https://rainfung.github.io/categories/tips">tips</a>
                     </li>
                     
                     
 		    
-                        <li><a href="/top/books/">BOOKS</a></li>
+                        <li><a href="https://rainfung.github.io/top/books/">BOOKS</a></li>
                     
-                        <li><a href="/top/about/">ABOUT</a></li>
+                        <li><a href="https://rainfung.github.io/top/about/">ABOUT</a></li>
                     
 
                     
 		    <li>
-                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+                        <a href="https://rainfung.github.io/search">SEARCH <img src="https://rainfung.github.io/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
 		    </li>
                     
                 </ul>
@@ -183,7 +179,7 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/istio" title="Istio">
+                        <a class="tag" href="https://rainfung.github.io/tags/istio" title="Istio">
                             Istio
                         </a>
                         
@@ -335,9 +331,9 @@ spec:
 
 <p>用一种叫做“Virtual services”的东西代替路由规则可能看起来有点奇怪，但对于它配置的内容而言，这事实上是一个更好的名称，特别是在重新设计API以解决先前模型的可扩展性问题之后。</p>
 
-<p>实际上，发生的变化是：在之前的模型中，需要用一组相互独立的配置规则来为特定的目的服务设置路由规则，并通过precedence字段来控制这些规则的顺序；在新的API中，则直接对（虚拟）服务进行配置，该虚拟服务的所有规则以一个有序列表的方式配置在对应的<a href="/docs/reference/config/istio.networking.v1alpha3/#VirtualService">VirtualService</a> 资源中。</p>
+<p>实际上，发生的变化是：在之前的模型中，需要用一组相互独立的配置规则来为特定的目的服务设置路由规则，并通过precedence字段来控制这些规则的顺序；在新的API中，则直接对（虚拟）服务进行配置，该虚拟服务的所有规则以一个有序列表的方式配置在对应的<a href="https://rainfung.github.io/docs/reference/config/istio.networking.v1alpha3/#VirtualService">VirtualService</a> 资源中。</p>
 
-<p>例如，之前在<a href="/docs/guides/bookinfo/">Bookinfo</a> 应用程序的reviews服务中有两个RouteRule资源，如下所示：</p>
+<p>例如，之前在<a href="https://rainfung.github.io/docs/guides/bookinfo/">Bookinfo</a> 应用程序的reviews服务中有两个RouteRule资源，如下所示：</p>
 
 <pre><code class="language-yaml">apiVersion: config.istio.io/v1alpha2
 kind: RouteRule
@@ -577,7 +573,7 @@ spec:
 <div class="zs-modal-box">
 	<div class="zs-modal-head">
 		<button type="button" class="close">×</button>
-		<span class="author"><a href="https://fengrain.github.io/"><img src="/img/favicon.png" />Huabing Blog</a></span>
+		<span class="author"><a href="https://rainfung.github.io/"><img src="https://rainfung.github.io/img/favicon.png" />Dive Into Data</a></span>
         
 	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
 		
@@ -595,15 +591,15 @@ spec:
 		<div class="zs-modal-pay">
 			<button class="btn btn-bred" id="pay-text">2元</button>
 			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
-			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+			<img src="https://rainfung.github.io/img/reward/wechat-2.png"  id="pay-image"/>
 		</div>
 	</div>
 	<div class="zs-modal-footer">
-		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
-		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="https://rainfung.github.io/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="https://rainfung.github.io/img/reward/alipay-btn.png"/></span></label>
 	</div>
 </div>
-<script type="text/javascript" src="/js/reward.js"></script>
+<script type="text/javascript" src="https://rainfung.github.io/js/reward.js"></script>
 
                 
 
@@ -611,13 +607,13 @@ spec:
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/06/02/istio08/" data-toggle="tooltip" data-placement="top" title="Istio 0.8 Release发布">&larr;
+                        <a href="https://rainfung.github.io/2018/06/02/istio08/" data-toggle="tooltip" data-placement="top" title="Istio 0.8 Release发布">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/post/readme/" data-toggle="tooltip" data-placement="top" title="Clean White Theme for Hugo">Next
+                        <a href="https://rainfung.github.io/post/test01/" data-toggle="tooltip" data-placement="top" title="An Example Post">Next
                             Post &rarr;</a>
                     </li>
                     
@@ -639,16 +635,14 @@ spec:
                 
                 <section>
                     <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <h5><a href="https://rainfung.github.io/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                         
                         
                         
                         
                         
-                        
-                        
-                        <a href="/tags/docker" title="docker">
+                        <a href="https://rainfung.github.io/tags/docker" title="docker">
                             docker
                         </a>
                         
@@ -656,21 +650,19 @@ spec:
                         
                         
                         
-                        <a href="/tags/istio" title="istio">
+                        <a href="https://rainfung.github.io/tags/istio" title="istio">
                             istio
                         </a>
                         
                         
                         
-                        
-                        
-                        <a href="/tags/kubernetes" title="kubernetes">
+                        <a href="https://rainfung.github.io/tags/kubernetes" title="kubernetes">
                             kubernetes
                         </a>
                         
                         
                         
-                        <a href="/tags/microservice" title="microservice">
+                        <a href="https://rainfung.github.io/tags/microservice" title="microservice">
                             microservice
                         </a>
                         
@@ -678,19 +670,31 @@ spec:
                         
                         
                         
-                        <a href="/tags/security" title="security">
+                        <a href="https://rainfung.github.io/tags/security" title="security">
                             security
                         </a>
                         
                         
                         
-                        <a href="/tags/service-mesh" title="service-mesh">
+                        <a href="https://rainfung.github.io/tags/service-mesh" title="service-mesh">
                             service-mesh
                         </a>
                         
                         
                         
-                        <a href="/tags/tips" title="tips">
+                        <a href="https://rainfung.github.io/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        
+                        
+                        <a href="https://rainfung.github.io/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                        
+                        
+                        <a href="https://rainfung.github.io/tags/tips" title="tips">
                             tips
                         </a>
                         
@@ -732,7 +736,7 @@ spec:
                 <ul class="list-inline text-center">
                    
                    <li>
-                       <a href='' rel="alternate" type="application/rss+xml" title="Huabing Blog" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="Dive Into Data" >
                            <span class="fa-stack fa-lg">
                                <i class="fa fa-circle fa-stack-2x"></i>
                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -742,7 +746,7 @@ spec:
                    
                     
                     <li>
-                        <a href="mailto:youremail@gmail.com">
+                        <a href="mailto:409908131@qq.com">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
@@ -760,7 +764,7 @@ spec:
 		    
                     
                     <li>
-                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                        <a target="_blank" href="https://rainfung.github.io/your%20wechat%20qr%20code%20image">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
@@ -770,7 +774,7 @@ spec:
 		    
                     
                     <li>
-                        <a target="_blank" href="https://github.com/yourgithub">
+                        <a target="_blank" href="https://github.com/RainFung">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -781,32 +785,14 @@ spec:
                     
                     
                     
-                    <li>
-                        <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
                     
                     
-                    <li>
-                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
                     
                     
                     
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Huabing Blog 2019
+                    Copyright &copy; Dive Into Data 2019
                     <br>
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
                     <iframe
