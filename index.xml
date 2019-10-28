@@ -6,9 +6,19 @@
     <description>Recent content on Dive Into Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://rainfung.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About Blog</title>
+      <link>https://rainfung.github.io/post/2019-10-28-about-blog/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://rainfung.github.io/post/2019-10-28-about-blog/</guid>
+      <description>About Blog 欢迎各位来到我的博客空间，希望能与各位一起交流数据与编程的知识，探索新的世界。 About Me 首先自我介绍一下，我是一名转行成功的算法工程师。曾经的</description>
+    </item>
     
     <item>
       <title></title>

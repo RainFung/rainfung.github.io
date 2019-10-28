@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rainfung.github.io/post/2019-10-28-about-blog/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rainfung.github.io/categories/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rainfung.github.io/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rainfung.github.io/post/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rainfung.github.io/tags/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rainfung.github.io/categories/tech/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rainfung.github.io/tags/thinking/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rainfung.github.io/search/placeholder/</loc>
     <priority>0</priority>
   </url>
@@ -18,19 +53,7 @@
   </url>
   
   <url>
-    <loc>https://rainfung.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://rainfung.github.io/</loc>
-  </url>
-  
-  <url>
     <loc>https://rainfung.github.io/search/</loc>
-  </url>
-  
-  <url>
-    <loc>https://rainfung.github.io/tags/</loc>
   </url>
   
   <url>
